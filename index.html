@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofía Neri - Fotógrafa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos esenciales (críticos) */
+        html { box-sizing: border-box; font-size: 100%; }
+        *, *:before, *:after { box-sizing: inherit; }
+        body { font-family: 'Nunito Sans', sans-serif; margin: 0; padding: 0; background-color: #fff; color: #1c1b1f; line-height: 1.6; }
+        .hero { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+        .hero-image-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 80%, rgba(0,0,0,0.8) 100%); pointer-events: none; }
+        .hero-content { text-align: center; color: white; z-index: 2; width: 80%; max-width: 800px; padding: 16px; }
+        .hero-title { font-size: clamp(2rem, 8vw, 4rem); font-weight: 700; margin: 0 0 16px 0; color: #fff; }
+        .hero-subtitle { font-size: clamp(1rem, 4vw, 1.5rem); margin: 0 0 24px 0; color: #fff; }
+        .hero-overline { font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; }
+        .hero-scroll-button { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; transition: background-color 0.3s ease-in-out; border: none; cursor: pointer; }
+    </style>
+
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-image-container">
+            <img src="images/main.webp" alt="Fotografía de Sofía Neri" loading="lazy" decoding="async" width="2000" height="1333"
+                 srcset="images/main-400w.webp 400w, images/main-800w.webp 800w, images/main-1200w.webp 1200w, images/main-2000w.webp 2000w"
+                 sizes="(max-width: 600px) 400px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, 2000px">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Sofía Neri</h1>
+            <p class="hero-subtitle">Fotógrafa</p>
+            <span class="hero-overline">MACARENA RECORRE EL MUNDO</span>
+            <a href="#destacados" class="hero-scroll-button" aria-label="Ver trabajos destacados">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 4 4 4-4"/><path d="M12 8v8"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="content">
+        <section id="destacados" class="destacados">
+            <h2 class="section-title">Los más destacados</h2>
+            <div class="destacados-grid">
+                <article class="mdc-card">
+                    <a href="#" class="mdc-card__primary-action" tabindex="0">
+                        <div class="mdc-card__media mdc-card__media--16-9">
+                            <img src="images/placeholder.webp" alt="Paisaje con bajo presupuesto" loading="lazy" decoding="async" width="800" height="450"
+                                 srcset="images/placeholder-400w.webp 400w, images/placeholder-800w.webp 800w"
+                                 sizes="(max-width: 600px) 400px, 800px" class="mdc-card__media-content">
+                        </div>
+                        <div class="mdc-card__content">
+                            <h3 class="mdc-card__title">El mundo con bajo presupuesto</h3>
+                            <p class="mdc-card__description">Presentá tus mejores publicaciones de viajes.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="mdc-card">
+                    <a href="#" class="mdc-card__primary-action" tabindex="0">
+                        <div class="mdc-card__media mdc-card__media--16-9">
+                            <img src="images/placeholder.webp" alt="Maravillas invernales" loading="lazy" decoding="async" width="800" height="450"
+                                 srcset="images/placeholder-400w.webp 400w, images/placeholder-800w.webp 800w"
+                                 sizes="(max-width: 600px) 400px, 800px" class="mdc-card__media-content">
+                        </div>
+                        <div class="mdc-card__content">
+                            <h3 class="mdc-card__title">Maravillas invernales</h3>
+                            <p class="mdc-card__description">Presentá tus mejores publicaciones.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="mdc-card">
+                    <a href="#" class="mdc-card__primary-action" tabindex="0">
+                        <div class="mdc-card__media mdc-card__media--16-9">
+                            <img src="images/placeholder.webp" alt="Lugares secretos" loading="lazy" decoding="async" width="800" height="450"
+                                 srcset="images/placeholder-400w.webp 400w, images/placeholder-800w.webp 800w"
+                                 sizes="(max-width: 600px) 400px, 800px" class="mdc-card__media-content">
+                        </div>
+                        <div class="mdc-card__content">
+                            <h3 class="mdc-card__title">Lugares secretos</h3>
+                            <p class="mdc-card__description">Presentá tus mejores publicaciones de viajes.</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <section class="sobre-sofia-full-width">
+        <div class="sobre-sofia-content">
+            <div class="sobre-sofia-texto">
+                <h2 class="section-title">Sobre Sofía</h2>
+                <p>Sabe todos los trucos para viajar con un presupuesto limitado.  ¿Cómo recorrer Europa sin vaciar tu cuenta bancaria? ¿Dónde encontrar lujos accesibles viajando de mochilero por Asia? ¡Preguntale a Macarena!</p>
+            </div>
+            <div class="sobre-sofia-imagen">
+                <img src="images/placeholder.webp" alt="Foto de Sofía Neri" loading="lazy" decoding="async" class="profile-image" width="600" height="400"
+                     srcset="images/placeholder-400w.webp 400w, images/placeholder-800w.webp 800w" sizes="(max-width: 400px) 400px, 800px">
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Sofía Neri. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

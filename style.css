@@ -1,0 +1,148 @@
+:root {
+    /* Paleta de colores pastel (ejemplo) */
+    --md-sys-color-primary: #95c8d8; /* Azul pastel */
+    --md-sys-color-on-primary: #ffffff; /* Texto sobre azul pastel */
+    --md-sys-color-secondary: #c9df8a; /* Verde pastel */
+    --md-sys-color-on-secondary: #2f3123; /* Texto sobre verde pastel */
+    --md-sys-color-surface: #fefbe8; /* Crema muy claro */
+    --md-sys-color-on-surface: #1c1b1f; /* Texto principal */
+    --md-sys-color-outline: #79747e;
+    --md-sys-color-surface-container-highest: #e6e1e5;
+    --md-sys-color-surface-container-low: #f7f2fa;
+
+    /* M3 */
+    --md-sys-color-surface-container: #f2eff4;
+    --md-sys-color-on-surface-variant: #49454f;
+    --md-sys-color-outline-variant: #cac4d0;
+    --md-sys-color-sobre-sofia-bg: #f5f0ec;
+
+    /* Alturas */
+    --hero-height: 100vh;
+
+    /* Espaciado y bordes */
+    --border-radius-large: 12px;
+    --spacing-unit: 8px;
+
+    /* Transiciones */
+    --transition-smooth: 0.3s ease-in-out;
+
+    /* Sombras M3 */
+    --md-sys-elevation-level-1: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    --md-sys-elevation-level-2: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    --md-sys-elevation-level-3: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Reseteo básico */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito Sans', sans-serif; background-color: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); line-height: 1.6; }
+
+/* --- Hero --- */
+.hero { position: relative; width: 100%; height: var(--hero-height); overflow: hidden; display: flex; justify-content: center; align-items: center; }
+.hero-image-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.hero-image-container img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(80%); }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 80%, rgba(0,0,0,0.8) 100%); pointer-events: none; }
+.hero-content { text-align: center; color: white; z-index: 2; width: 80%; max-width: 800px; padding: calc(var(--spacing-unit) * 2); }
+.hero-title { font-size: clamp(2rem, 8vw, 4rem); font-weight: 700; margin: 0 0 calc(var(--spacing-unit) * 2) 0; color: var(--md-sys-color-on-primary); }
+.hero-subtitle { font-size: clamp(1rem, 4vw, 1.5rem); margin: 0 0 calc(var(--spacing-unit) * 3) 0; color: var(--md-sys-color-on-primary);}
+.hero-overline { font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--md-sys-color-on-primary); }
+.hero-scroll-button { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; transition: background-color var(--transition-smooth); border: none; cursor: pointer; }
+.hero-scroll-button:hover, .hero-scroll-button:focus { background-color: rgba(255, 255, 255, 0.4); outline: none; }
+.hero-scroll-button svg { stroke: white; transition: transform var(--transition-smooth); }
+.hero-scroll-button:hover svg, .hero-scroll-button:focus svg { transform: translateY(4px); }
+
+/* --- Main & Destacados --- */
+.content { padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2); max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 1.75rem; font-weight: 500; margin-bottom: calc(var(--spacing-unit) * 2); text-align: center; color: var(--md-sys-color-on-surface); }
+.destacados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Más responsivo */ gap: calc(var(--spacing-unit) * 2); }
+
+/* --- Tarjetas Material Design --- */
+.mdc-card {
+    background-color: var(--md-sys-color-surface-container);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--md-sys-elevation-level-1);
+    overflow: hidden; /* Para bordes redondeados en la imagen */
+    transition: box-shadow var(--transition-smooth), transform var(--transition-smooth);
+    display: flex;          /* Añadido */
+    flex-direction: column; /* Añadido */
+    height: 100%;           /* Añadido */
+
+}
+
+.mdc-card:hover {
+    box-shadow: var(--md-sys-elevation-level-3);
+    transform: translateY(-4px);
+}
+
+.mdc-card__primary-action {
+    display: flex;          /* Flexbox para toda la tarjeta */
+    flex-direction: column; /* Apila elementos verticalmente */
+    flex-grow: 1;           /* Permite que la acción principal crezca */
+    text-decoration: none;  /* Quita subrayado */
+    color: inherit;         /* Hereda color del texto */
+    height: 100%; /* Opcional, para asegurar que el enlace ocupe todo el alto */
+
+}
+
+.mdc-card__media {
+    position: relative;  /* Para posicionar ::before */
+     border-top-left-radius: var(--border-radius-large); /*Redondea*/
+    border-top-right-radius: var(--border-radius-large);/*Redondea*/
+}
+
+/*  Pseudo-elemento para el ratio 16:9 *Si se usa, comentar  mdc-card__media--16-9*/
+.mdc-card__media::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 9 / 16 = 0.5625 (56.25%) */
+}
+
+.mdc-card__media-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Asegura que la imagen cubra el espacio */
+}
+
+.mdc-card__content {
+    padding: calc(var(--spacing-unit) * 2);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Importante para que el contenido ocupe el espacio restante */
+    justify-content: space-between; /* Distribuye título y descripción */
+
+}
+
+.mdc-card__title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: calc(var(--spacing-unit));
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.3; /* Interlineado para títulos */
+
+}
+
+.mdc-card__description {
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.4;
+     margin-bottom: 0; /*Elimina margen inferior*/
+}
+
+/* --- Sobre Sofía --- */
+.sobre-sofia-full-width { background-color: var(--md-sys-color-sobre-sofia-bg); padding: calc(var(--spacing-unit) * 4) 0; }
+.sobre-sofia-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: calc(var(--spacing-unit) * 4); align-items: center; justify-items: center; }
+.sobre-sofia-texto { text-align: center; }
+.sobre-sofia-texto p { font-size: 1rem; line-height: 1.6; color: var(--md-sys-color-on-surface); margin-bottom: 0; }
+.sobre-sofia-imagen { text-align: center; }
+.profile-image { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius-large); box-shadow: var(--md-sys-elevation-level-1); }
+
+/* --- Footer --- */
+.site-footer { padding: calc(var(--spacing-unit) * 2); text-align: center; background-color: var(--md-sys-color-surface-container-highest); }
+
+/* Media Queries (ajustes si son necesarios) */
+@media (min-width: 600px) { /* Estilos para tablets y pantallas más grandes */ }
+@media (min-width: 1024px) { /* Estilos para desktops */ }
