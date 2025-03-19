@@ -1,0 +1,19 @@
+{
+  "destacados": [
+    {
+      "image": "main.jpg",
+      "title": "El mundo ",
+      "description": ""
+    },
+    {
+      "image": "m",
+      "title": "Maravillas invernales",
+      "description": "Presentá tus mejores publicaciones."
+    },
+    {
+      "image": "lugares-secretos.web",
+      "title": "Lugares secretos",
+      "description": "Presentá tus mejores publicaciones de viajes."
+    }
+  ]
+}
