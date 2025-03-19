@@ -55,7 +55,7 @@ body { font-family: 'Nunito Sans', sans-serif; background-color: var(--md-sys-co
 /* --- Main & Destacados --- */
 .content { padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2); max-width: 1200px; margin: 0 auto; }
 .section-title { font-size: 1.75rem; font-weight: 500; margin-bottom: calc(var(--spacing-unit) * 2); text-align: center; color: var(--md-sys-color-on-surface); }
-.destacados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Más responsivo */ gap: calc(var(--spacing-unit) * 2); }
+.destacados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: calc(var(--spacing-unit) * 2); }
 
 /* --- Tarjetas Material Design --- */
 .mdc-card {
@@ -64,9 +64,9 @@ body { font-family: 'Nunito Sans', sans-serif; background-color: var(--md-sys-co
     box-shadow: var(--md-sys-elevation-level-1);
     overflow: hidden; /* Para bordes redondeados en la imagen */
     transition: box-shadow var(--transition-smooth), transform var(--transition-smooth);
-    display: flex;          /* Añadido */
-    flex-direction: column; /* Añadido */
-    height: 100%;           /* Añadido */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
 }
 
@@ -76,7 +76,7 @@ body { font-family: 'Nunito Sans', sans-serif; background-color: var(--md-sys-co
 }
 
 .mdc-card__primary-action {
-    display: flex;          /* Flexbox para toda la tarjeta */
+    display: flex;        /* Flexbox para toda la tarjeta */
     flex-direction: column; /* Apila elementos verticalmente */
     flex-grow: 1;           /* Permite que la acción principal crezca */
     text-decoration: none;  /* Quita subrayado */
