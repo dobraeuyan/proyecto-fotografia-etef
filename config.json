@@ -2,18 +2,43 @@
   "destacados": [
     {
       "image": "main.jpg",
-      "title": "El mundo ",
+      "title": "",
       "description": ""
     },
     {
-      "image": "m",
-      "title": "Maravillas invernales",
-      "description": "Presentá tus mejores publicaciones."
+      "image": "main.jpg",
+      "title": "",
+      "description": ""
     },
     {
-      "image": "lugares-secretos.web",
-      "title": "Lugares secretos",
-      "description": "Presentá tus mejores publicaciones de viajes."
-    }
+      "image": "main.jpg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "main.jpg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "main.jpg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "main.jpg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "main.jpg",
+      "title": "",
+      "description": ""
+    },
+    {
+      "image": "main.jpg",
+      "title": "",
+      "description": ""
+    },
   ]
 }
